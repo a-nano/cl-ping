@@ -20,7 +20,9 @@
 	(list str))))
 
 (defun parse-responce (res)
-  (let ((form (split #\Newline (string-trim '(#\Newline #\Return) res))))
+  (let ((form (mapcar (lambda (str)
+			(string-trim '(#\Newline #\Return) str))
+		      (split #\Newline (string-trim '(#\Newline #\Return) res)))))
     (values
      (second form)
      (fifth form)
