@@ -1,0 +1,7 @@
+# Cl-ping - get ping information.
+## Usage
+
+```common-lisp
+(ql:quickload :cl-ping)
+
+(cl-ping:ping "192.xxx.xxx.xxx")
